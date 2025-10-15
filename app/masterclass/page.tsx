@@ -1,23 +1,21 @@
 "use client"
 
-import { useState, useEffect } from "react"
-import { Toast } from "@/components/ui/toast"
+import VideoPlayer from "@/components/ui/video-player"
 
 export default function MasterClassPage() {
-  const [showToast, setShowToast] = useState(false)
-
-  useEffect(() => {
-    setShowToast(true)
-  }, [])
-
   return (
-    <div className="min-h-screen bg-black text-white flex items-center justify-center">
-      <div className="text-center max-w-2xl mx-auto px-6">
-        <h1 className="text-6xl font-bold mb-8 text-white">MasterClass</h1>
-        <div className="text-xl text-gray-300 leading-relaxed">
-          <p className="mb-6">Welcome to MasterClass - Premium Educational Platform</p>
+    <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-6">
+      <div className="text-center max-w-4xl mx-auto mb-12">
+        <h1 className="text-6xl font-bold mb-6 text-white">MasterClass</h1>
+        <p className="text-xl text-gray-300 mb-4">Premium Educational Platform</p>
+      </div>
+
+      <VideoPlayer src="https://videos.pexels.com/video-files/30333849/13003128_2560_1440_25fps.mp4" />
+
+      <div className="text-center max-w-2xl mx-auto mt-12">
+        <div className="text-lg text-gray-300 leading-relaxed">
           <p className="mb-8">This platform is currently under maintenance.</p>
-          <div className="space-y-2 text-lg">
+          <div className="space-y-2">
             <p>For more information, contact:</p>
             <p className="text-blue-400">📞 +250795695555</p>
             <p className="text-blue-400">✉️ ishimwekevin199@gmail.com</p>
@@ -25,14 +23,6 @@ export default function MasterClassPage() {
           </div>
         </div>
       </div>
-
-      {showToast && (
-        <Toast
-          title="Welcome to MasterClass"
-          description="It's Still Under Maintenance for more contact: +250795695555 or ishimwekevin199@gmail.com or ishimwekevin911@gmail.com"
-          onClose={() => setShowToast(false)}
-        />
-      )}
     </div>
   )
 }
