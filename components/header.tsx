@@ -121,7 +121,7 @@ export function Header() {
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>BMAAS</div>
-                          <div className="text-xs text-muted-foreground">Business Management as a Service</div>
+                          <div className="text-xs text-muted-foreground">Branding & Marketing as a Service</div>
                         </div>
                       </a>
                       <a
@@ -136,6 +136,22 @@ export function Header() {
                             EDCARE
                           </div>
                           <div className="text-xs text-muted-foreground">Educational Care Platform</div>
+                        </div>
+                      </a>
+                      <a
+                        href="https://personal-intelligent-v3.lovable.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex h-8 w-8 items-center justify-center bg-orange-600 text-white rounded text-xs font-bold">
+                          PI
+                        </div>
+                        <div>
+                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
+                            Personal Intelligent
+                          </div>
+                          <div className="text-xs text-muted-foreground">AI-powered personal assistant</div>
                         </div>
                       </a>
                     </div>
