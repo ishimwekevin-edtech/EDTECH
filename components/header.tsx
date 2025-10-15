@@ -99,20 +99,6 @@ export function Header() {
                     <h3 className="text-sm font-semibold text-muted-foreground mb-4">Frameworks</h3>
                     <div className="space-y-4">
                       <a
-                        href="/masterclass"
-                        className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
-                      >
-                        <div className="flex h-8 w-8 items-center justify-center bg-blue-600 text-white rounded text-xs font-bold">
-                          MC
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            MasterClass
-                          </div>
-                          <div className="text-xs text-muted-foreground">Premium educational platform</div>
-                        </div>
-                      </a>
-                      <a
                         href="/bmaas"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
@@ -122,20 +108,6 @@ export function Header() {
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>BMAAS</div>
                           <div className="text-xs text-muted-foreground">Branding & Marketing as a Service</div>
-                        </div>
-                      </a>
-                      <a
-                        href="/edcare"
-                        className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
-                      >
-                        <div className="flex h-8 w-8 items-center justify-center bg-purple-600 text-white rounded text-xs font-bold">
-                          EC
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            EDCARE
-                          </div>
-                          <div className="text-xs text-muted-foreground">Educational Care Platform</div>
                         </div>
                       </a>
                       <a
