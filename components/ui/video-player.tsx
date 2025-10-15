@@ -3,8 +3,8 @@
 import { useState, useRef, useEffect } from "react"
 import { Play, Pause, Volume2, VolumeX, Maximize, Settings } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Slider } from "@/components/ui/slider"
 import { Button } from "@/components/ui/button"
+import { Slider } from "@/components/ui/slider"
 
 interface VideoPlayerProps {
   src: string
@@ -20,26 +20,22 @@ export function VideoPlayer({ src, poster, className = "" }: VideoPlayerProps) {
   const [volume, setVolume] = useState(1)
   const [isMuted, setIsMuted] = useState(false)
   const [showControls, setShowControls] = useState(true)
-  const [showSettings, setShowSettings] = useState(false)
   const [playbackRate, setPlaybackRate] = useState(1)
-  const controlsTimeoutRef = useRef<NodeJS.Timeout>()
+  const [showSettings, setShowSettings] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
-    const handleTimeUpdate = () => setCurrentTime(video.currentTime)
-    const handleLoadedMetadata = () => setDuration(video.duration)
-    const handleEnded = () => setIsPlaying(false)
+    const updateTime = () => setCurrentTime(video.currentTime)
+    const updateDuration = () => setDuration(video.duration)
 
-    video.addEventListener("timeupdate", handleTimeUpdate)
-    video.addEventListener("loadedmetadata", handleLoadedMetadata)
-    video.addEventListener("ended", handleEnded)
+    video.addEventListener("timeupdate", updateTime)
+    video.addEventListener("loadedmetadata", updateDuration)
 
     return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate)
-      video.removeEventListener("loadedmetadata", handleLoadedMetadata)
-      video.removeEventListener("ended", handleEnded)
+      video.removeEventListener("timeupdate", updateTime)
+      video.removeEventListener("loadedmetadata", updateDuration)
     }
   }, [])
 
@@ -101,23 +97,11 @@ export function VideoPlayer({ src, poster, className = "" }: VideoPlayerProps) {
     return `${minutes}:${seconds.toString().padStart(2, "0")}`
   }
 
-  const handleMouseMove = () => {
-    setShowControls(true)
-    if (controlsTimeoutRef.current) {
-      clearTimeout(controlsTimeoutRef.current)
-    }
-    controlsTimeoutRef.current = setTimeout(() => {
-      if (isPlaying) {
-        setShowControls(false)
-      }
-    }, 3000)
-  }
-
   return (
     <div
       className={`relative group ${className}`}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={() => isPlaying && setShowControls(false)}
+      onMouseEnter={() => setShowControls(true)}
+      onMouseLeave={() => setShowControls(false)}
     >
       <video ref={videoRef} src={src} poster={poster} className="w-full h-full rounded-lg" onClick={togglePlay} />
 
@@ -127,108 +111,75 @@ export function VideoPlayer({ src, poster, className = "" }: VideoPlayerProps) {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
-            className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent rounded-lg"
+            className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4 rounded-b-lg"
           >
-            <div className="absolute bottom-0 left-0 right-0 p-4 space-y-2">
-              <Slider
-                value={[currentTime]}
-                max={duration}
-                step={0.1}
-                onValueChange={handleSeek}
-                className="cursor-pointer"
-              />
+            <Slider value={[currentTime]} max={duration} step={0.1} onValueChange={handleSeek} className="mb-4" />
 
-              <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                <Button variant="ghost" size="icon" onClick={togglePlay} className="text-white hover:bg-white/20">
+                  {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                </Button>
+
                 <div className="flex items-center gap-2">
-                  <Button variant="ghost" size="icon" onClick={togglePlay} className="text-white hover:bg-white/20">
-                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                  <Button variant="ghost" size="icon" onClick={toggleMute} className="text-white hover:bg-white/20">
+                    {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
                   </Button>
-
-                  <div className="flex items-center gap-2">
-                    <Button variant="ghost" size="icon" onClick={toggleMute} className="text-white hover:bg-white/20">
-                      {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
-                    </Button>
-                    <Slider
-                      value={[isMuted ? 0 : volume]}
-                      max={1}
-                      step={0.1}
-                      onValueChange={handleVolumeChange}
-                      className="w-20 cursor-pointer"
-                    />
-                  </div>
-
-                  <span className="text-white text-sm">
-                    {formatTime(currentTime)} / {formatTime(duration)}
-                  </span>
+                  <Slider
+                    value={[isMuted ? 0 : volume]}
+                    max={1}
+                    step={0.01}
+                    onValueChange={handleVolumeChange}
+                    className="w-24"
+                  />
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <div className="relative">
-                    <Button
-                      variant="ghost"
-                      size="icon"
-                      onClick={() => setShowSettings(!showSettings)}
-                      className="text-white hover:bg-white/20"
-                    >
-                      <Settings className="h-5 w-5" />
-                    </Button>
+                <span className="text-white text-sm">
+                  {formatTime(currentTime)} / {formatTime(duration)}
+                </span>
+              </div>
 
-                    <AnimatePresence>
-                      {showSettings && (
-                        <motion.div
-                          initial={{ opacity: 0, y: 10 }}
-                          animate={{ opacity: 1, y: 0 }}
-                          exit={{ opacity: 0, y: 10 }}
-                          className="absolute bottom-full right-0 mb-2 bg-black/90 backdrop-blur-md rounded-lg p-2 min-w-[120px]"
-                        >
-                          <div className="text-white text-sm font-medium mb-2 px-2">Speed</div>
-                          {[0.5, 1, 1.5, 2].map((rate) => (
-                            <button
-                              key={rate}
-                              onClick={() => changePlaybackRate(rate)}
-                              className={`w-full text-left px-2 py-1 rounded text-sm ${
-                                playbackRate === rate ? "bg-white/20 text-white" : "text-white/70 hover:bg-white/10"
-                              }`}
-                            >
-                              {rate}x
-                            </button>
-                          ))}
-                        </motion.div>
-                      )}
-                    </AnimatePresence>
-                  </div>
-
+              <div className="flex items-center gap-2">
+                <div className="relative">
                   <Button
                     variant="ghost"
                     size="icon"
-                    onClick={toggleFullscreen}
+                    onClick={() => setShowSettings(!showSettings)}
                     className="text-white hover:bg-white/20"
                   >
-                    <Maximize className="h-5 w-5" />
+                    <Settings className="h-5 w-5" />
                   </Button>
+
+                  {showSettings && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="absolute bottom-full right-0 mb-2 bg-black/90 backdrop-blur-md rounded-lg p-2 min-w-[120px]"
+                    >
+                      <div className="text-white text-sm font-medium mb-2 px-2">Speed</div>
+                      {[0.5, 1, 1.5, 2].map((rate) => (
+                        <button
+                          key={rate}
+                          onClick={() => changePlaybackRate(rate)}
+                          className={`w-full text-left px-2 py-1 rounded text-sm ${
+                            playbackRate === rate ? "bg-white/20 text-white" : "text-white/70 hover:bg-white/10"
+                          }`}
+                        >
+                          {rate}x
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
                 </div>
+
+                <Button variant="ghost" size="icon" onClick={toggleFullscreen} className="text-white hover:bg-white/20">
+                  <Maximize className="h-5 w-5" />
+                </Button>
               </div>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
-
-      {!isPlaying && (
-        <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
-          animate={{ scale: 1, opacity: 1 }}
-          className="absolute inset-0 flex items-center justify-center"
-        >
-          <Button
-            size="icon"
-            onClick={togglePlay}
-            className="h-16 w-16 rounded-full bg-white/90 hover:bg-white text-black"
-          >
-            <Play className="h-8 w-8 ml-1" />
-          </Button>
-        </motion.div>
-      )}
     </div>
   )
 }
