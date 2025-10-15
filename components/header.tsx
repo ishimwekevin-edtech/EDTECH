@@ -121,7 +121,7 @@ export function Header() {
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>BMAAS</div>
-                          <div className="text-xs text-muted-foreground">Branding & Marketing as a Service</div>
+                          <div className="text-xs text-muted-foreground">Business Management as a Service</div>
                         </div>
                       </a>
                       <a
