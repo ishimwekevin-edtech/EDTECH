@@ -7,12 +7,6 @@ import {
   ChevronDown,
   Menu,
   X,
-  Globe,
-  Zap,
-  Shield,
-  BarChart3,
-  Cpu,
-  Eye,
   Sparkles,
   ShoppingCart,
   TrendingUp,
@@ -30,6 +24,9 @@ import {
   GitBranch,
   Sun,
   Moon,
+  Brain,
+  MapPin,
+  BookMarked,
 } from "lucide-react"
 
 export function Header() {
@@ -88,154 +85,64 @@ export function Header() {
                 <ChevronDown className="h-4 w-4" />
               </button>
               <div
-                className={`absolute top-full left-0 mt-2 w-[800px] p-6 bg-background border border-border rounded-lg shadow-lg backdrop-blur-md bg-background/95 z-50 transition-all duration-300 ease-out ${
+                className={`absolute top-full left-0 mt-2 w-[600px] p-6 bg-background border border-border rounded-lg shadow-lg backdrop-blur-md bg-background/95 z-50 transition-all duration-300 ease-out ${
                   productsOpen
                     ? "opacity-100 translate-y-0 pointer-events-auto"
                     : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="grid grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 gap-8">
                   <div>
                     <h3 className="text-sm font-semibold text-muted-foreground mb-4">Frameworks</h3>
                     <div className="space-y-4">
                       <a
-                        href="/masterclass"
+                        href="https://personal-intelligent-v3.lovable.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
                         <div className="flex h-8 w-8 items-center justify-center bg-blue-600 text-white rounded text-xs font-bold">
-                          MC
+                          <Brain className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            MasterClass
+                            Personal Intelligent
                           </div>
-                          <div className="text-xs text-muted-foreground">Premium educational platform</div>
+                          <div className="text-xs text-muted-foreground">Educational AI Platform</div>
                         </div>
                       </a>
                       <a
-                        href="/bmaas"
+                        href="https://schoolfinder.lovable.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
                         <div className="flex h-8 w-8 items-center justify-center bg-green-600 text-white rounded text-xs font-bold">
-                          BM
+                          <MapPin className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>BMAAS</div>
-                          <div className="text-xs text-muted-foreground">Business Management as a Service</div>
+                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
+                            SchoolFinder
+                          </div>
+                          <div className="text-xs text-muted-foreground">Find and discover schools</div>
                         </div>
                       </a>
                       <a
-                        href="/edcare"
+                        href="https://finals-hub.lovable.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
                         <div className="flex h-8 w-8 items-center justify-center bg-purple-600 text-white rounded text-xs font-bold">
-                          EC
+                          <BookMarked className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            EDCARE
+                            Finals Hub
                           </div>
-                          <div className="text-xs text-muted-foreground">Educational Care Platform</div>
+                          <div className="text-xs text-muted-foreground">Exam preparation platform</div>
                         </div>
                       </a>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-sm font-semibold text-muted-foreground mb-4">Infrastructure</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <BarChart3 className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>CI/CD</div>
-                          <div className="text-xs text-muted-foreground">Helping teams ship 6x faster</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Globe className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Delivery network
-                          </div>
-                          <div className="text-xs text-muted-foreground">Fast, scalable, and reliable</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Zap className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Fluid compute
-                          </div>
-                          <div className="text-xs text-muted-foreground">Servers, in serverless form</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Cpu className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            AI Infrastructure
-                          </div>
-                          <div className="text-xs text-muted-foreground">AI Gateway, Sandbox, and more</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Eye className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Observability
-                          </div>
-                          <div className="text-xs text-muted-foreground">Trace every step</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div>
-                    <h3 className="text-sm font-semibold text-muted-foreground mb-4">Security</h3>
-                    <div className="space-y-4">
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Shield className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Platform security
-                          </div>
-                          <div className="text-xs text-muted-foreground">DDoS Protection, Firewall</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Shield className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Web Application Firewall
-                          </div>
-                          <div className="text-xs text-muted-foreground">Granular, custom protection</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <Shield className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Bot management
-                          </div>
-                          <div className="text-xs text-muted-foreground">BotID, Bot Protection</div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
