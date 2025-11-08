@@ -1,7 +1,6 @@
 "use client"
 
 import Prism from "@/components/ui/prism"
-import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
 export function HeroSection() {
@@ -43,17 +42,11 @@ export function HeroSection() {
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-6">
         <h1 className="text-6xl md:text-8xl font-bold mb-6 text-balance">{"Learn the Learning in AI Era"}</h1>
         <p className="text-xl md:text-2xl mb-8 text-white/80 text-pretty max-w-2xl mx-auto">
-          {"Adopting a mindset of continuous adaptation, focusing on uniquely human skills, and leveraging AI as a learning partner."}
+          {
+            "Adopting a mindset of continuous adaptation, focusing on uniquely human skills, and leveraging AI as a learning partner."
+          }
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button
-            size="lg"
-            className="bg-white text-black hover:bg-white/90 text-lg px-8 py-6"
-            onClick={handleJoinMission}
-          >
-            Join Mission
-          </Button>
-        </div>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center"></div>
 
         {showWidget && (
           <div className="fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50 animate-in fade-in duration-300">

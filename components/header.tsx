@@ -8,12 +8,8 @@ import {
   Menu,
   X,
   Sparkles,
-  ShoppingCart,
   TrendingUp,
-  Grid3X3,
   FileText,
-  Wrench,
-  Palette,
   BookOpen,
   Store,
   HelpCircle,
@@ -27,6 +23,11 @@ import {
   Brain,
   MapPin,
   BookMarked,
+  Lightbulb,
+  GraduationCap,
+  Users2,
+  Building2,
+  UserCheck,
 } from "lucide-react"
 
 export function Header() {
@@ -96,7 +97,7 @@ export function Header() {
                     <h3 className="text-sm font-semibold text-muted-foreground mb-4">Frameworks</h3>
                     <div className="space-y-4">
                       <a
-                        href="https://personal-intelligent-v3.lovable.app/"
+                        href="https://personal-intelligent-v4.lovable.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
@@ -167,28 +168,30 @@ export function Header() {
               >
                 <div className="grid grid-cols-2 gap-8">
                   <div>
-                    <h3 className="text-sm font-semibold text-muted-foreground mb-4">Use Cases</h3>
+                    <h3 className="text-sm font-semibold text-muted-foreground mb-4">
+                      Education Powered by AI Use Cases
+                    </h3>
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                         <div className="flex h-8 w-8 items-center justify-center">
-                          <Sparkles className="h-4 w-4" />
+                          <Lightbulb className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            AI Apps
+                            Personalized Learning
                           </div>
-                          <div className="text-xs text-muted-foreground">Deploy at the speed of AI</div>
+                          <div className="text-xs text-muted-foreground">Adaptive AI-driven education</div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                         <div className="flex h-8 w-8 items-center justify-center">
-                          <ShoppingCart className="h-4 w-4" />
+                          <BookOpen className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Composable Commerce
+                            Intelligent Tutoring
                           </div>
-                          <div className="text-xs text-muted-foreground">Power storefronts that convert</div>
+                          <div className="text-xs text-muted-foreground">AI-powered academic support</div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
@@ -197,31 +200,20 @@ export function Header() {
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Marketing Sites
+                            Student Assessment
                           </div>
-                          <div className="text-xs text-muted-foreground">Launch campaigns fast</div>
+                          <div className="text-xs text-muted-foreground">Automated grading and feedback</div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                         <div className="flex h-8 w-8 items-center justify-center">
-                          <Grid3X3 className="h-4 w-4" />
+                          <Sparkles className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Multi-tenant Platforms
+                            Content Generation
                           </div>
-                          <div className="text-xs text-muted-foreground">Scale apps with one codebase</div>
-                        </div>
-                      </div>
-                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
-                        <div className="flex h-8 w-8 items-center justify-center">
-                          <FileText className="h-4 w-4" />
-                        </div>
-                        <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Web Apps
-                          </div>
-                          <div className="text-xs text-muted-foreground">Ship features, not infrastructure</div>
+                          <div className="text-xs text-muted-foreground">AI-created learning materials</div>
                         </div>
                       </div>
                     </div>
@@ -232,24 +224,57 @@ export function Header() {
                     <div className="space-y-4">
                       <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                         <div className="flex h-8 w-8 items-center justify-center">
-                          <Wrench className="h-4 w-4" />
+                          <GraduationCap className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Platform Engineers
+                            Students
                           </div>
-                          <div className="text-xs text-muted-foreground">Automate away repetition</div>
+                          <div className="text-xs text-muted-foreground">Learn with AI assistance</div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
                         <div className="flex h-8 w-8 items-center justify-center">
-                          <Palette className="h-4 w-4" />
+                          <PenTool className="h-4 w-4" />
                         </div>
                         <div>
                           <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Design Engineers
+                            Teachers
                           </div>
-                          <div className="text-xs text-muted-foreground">Deploy for every idea</div>
+                          <div className="text-xs text-muted-foreground">Enhance classroom experiences</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                        <div className="flex h-8 w-8 items-center justify-center">
+                          <UserCheck className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
+                            School Admins
+                          </div>
+                          <div className="text-xs text-muted-foreground">Manage educational platforms</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                        <div className="flex h-8 w-8 items-center justify-center">
+                          <Users2 className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
+                            Parents
+                          </div>
+                          <div className="text-xs text-muted-foreground">Monitor student progress</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                        <div className="flex h-8 w-8 items-center justify-center">
+                          <Building2 className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
+                            Education Institutions
+                          </div>
+                          <div className="text-xs text-muted-foreground">Transform learning ecosystems</div>
                         </div>
                       </div>
                     </div>
@@ -408,12 +433,6 @@ export function Header() {
             >
               Docs
             </a>
-            <a
-              href="#"
-              className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"} hover:text-muted-foreground transition-colors`}
-            >
-              Pricing
-            </a>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
@@ -422,15 +441,6 @@ export function Header() {
             </Button>
             <Button variant="ghost" size="sm">
               Contact
-            </Button>
-            <Button size="sm">Dashboard</Button>
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setAuthModalOpen(true)}
-              className="bg-green-500 text-white hover:bg-green-600"
-            >
-              Sign In
             </Button>
           </div>
 
@@ -459,9 +469,6 @@ export function Header() {
               <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
                 Docs
               </a>
-              <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
-                Pricing
-              </a>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
                 <Button variant="ghost" size="sm" className="justify-start" onClick={toggleTheme}>
                   {isDarkMode ? <Sun className="h-4 w-4 mr-2" /> : <Moon className="h-4 w-4 mr-2" />}
@@ -469,17 +476,6 @@ export function Header() {
                 </Button>
                 <Button variant="ghost" size="sm" className="justify-start">
                   Contact
-                </Button>
-                <Button size="sm" className="justify-start">
-                  Dashboard
-                </Button>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={() => setAuthModalOpen(true)}
-                  className="justify-start bg-green-500 text-white hover:bg-green-600"
-                >
-                  Sign In
                 </Button>
               </div>
             </div>
