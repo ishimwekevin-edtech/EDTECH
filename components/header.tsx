@@ -97,7 +97,7 @@ export function Header() {
                     <h3 className="text-sm font-semibold text-muted-foreground mb-4">Frameworks</h3>
                     <div className="space-y-4">
                       <a
-                        href="https://personal-intelligent-v4.lovable.app/"
+                        href="https://personal-intelligent-v5.lovable.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
