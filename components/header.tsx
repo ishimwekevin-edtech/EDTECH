@@ -18,8 +18,6 @@ import {
   Calendar,
   Newspaper,
   GitBranch,
-  Sun,
-  Moon,
   Brain,
   MapPin,
   Briefcase,
@@ -33,36 +31,13 @@ import {
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [authModalOpen, setAuthModalOpen] = useState(false)
-  const [isDarkMode, setIsDarkMode] = useState(false)
   const [productsOpen, setProductsOpen] = useState(false)
   const [solutionsOpen, setSolutionsOpen] = useState(false)
   const [resourcesOpen, setResourcesOpen] = useState(false)
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem("theme")
-    const systemPrefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-
-    if (savedTheme === "dark" || (!savedTheme && systemPrefersDark)) {
-      setIsDarkMode(true)
-      document.documentElement.classList.add("dark")
-    } else {
-      setIsDarkMode(false)
-      document.documentElement.classList.remove("dark")
-    }
+    document.documentElement.classList.add("dark")
   }, [])
-
-  const toggleTheme = () => {
-    const newTheme = !isDarkMode
-    setIsDarkMode(newTheme)
-
-    if (newTheme) {
-      document.documentElement.classList.add("dark")
-      localStorage.setItem("theme", "dark")
-    } else {
-      document.documentElement.classList.remove("dark")
-      localStorage.setItem("theme", "light")
-    }
-  }
 
   return (
     <header className="border-b border-border bg-background">
@@ -106,9 +81,7 @@ export function Header() {
                           <Brain className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Personal Intelligent
-                          </div>
+                          <div className="font-medium text-sm text-white">Personal Intelligent</div>
                           <div className="text-xs text-muted-foreground">Educational AI Platform</div>
                         </div>
                       </a>
@@ -122,9 +95,7 @@ export function Header() {
                           <MapPin className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            SchoolFinder
-                          </div>
+                          <div className="font-medium text-sm text-white">SchoolFinder</div>
                           <div className="text-xs text-muted-foreground">Find and discover schools</div>
                         </div>
                       </a>
@@ -138,7 +109,7 @@ export function Header() {
                           <Briefcase className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>BMAAS</div>
+                          <div className="font-medium text-sm text-white">BMAAS</div>
                           <div className="text-xs text-muted-foreground">Branding & Marketing as a Service</div>
                         </div>
                       </a>
@@ -175,9 +146,7 @@ export function Header() {
                           <Lightbulb className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Personalized Learning
-                          </div>
+                          <div className="font-medium text-sm text-white">Personalized Learning</div>
                           <div className="text-xs text-muted-foreground">Adaptive AI-driven education</div>
                         </div>
                       </div>
@@ -186,9 +155,7 @@ export function Header() {
                           <BookOpen className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Intelligent Tutoring
-                          </div>
+                          <div className="font-medium text-sm text-white">Intelligent Tutoring</div>
                           <div className="text-xs text-muted-foreground">AI-powered academic support</div>
                         </div>
                       </div>
@@ -197,9 +164,7 @@ export function Header() {
                           <TrendingUp className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Student Assessment
-                          </div>
+                          <div className="font-medium text-sm text-white">Student Assessment</div>
                           <div className="text-xs text-muted-foreground">Automated grading and feedback</div>
                         </div>
                       </div>
@@ -208,9 +173,7 @@ export function Header() {
                           <Sparkles className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Content Generation
-                          </div>
+                          <div className="font-medium text-sm text-white">Content Generation</div>
                           <div className="text-xs text-muted-foreground">AI-created learning materials</div>
                         </div>
                       </div>
@@ -225,9 +188,7 @@ export function Header() {
                           <GraduationCap className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Students
-                          </div>
+                          <div className="font-medium text-sm text-white">Students</div>
                           <div className="text-xs text-muted-foreground">Learn with AI assistance</div>
                         </div>
                       </div>
@@ -236,9 +197,7 @@ export function Header() {
                           <PenTool className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Teachers
-                          </div>
+                          <div className="font-medium text-sm text-white">Teachers</div>
                           <div className="text-xs text-muted-foreground">Enhance classroom experiences</div>
                         </div>
                       </div>
@@ -247,9 +206,7 @@ export function Header() {
                           <UserCheck className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            School Admins
-                          </div>
+                          <div className="font-medium text-sm text-white">School Admins</div>
                           <div className="text-xs text-muted-foreground">Manage educational platforms</div>
                         </div>
                       </div>
@@ -258,9 +215,7 @@ export function Header() {
                           <Users2 className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Parents
-                          </div>
+                          <div className="font-medium text-sm text-white">Parents</div>
                           <div className="text-xs text-muted-foreground">Monitor student progress</div>
                         </div>
                       </div>
@@ -269,9 +224,7 @@ export function Header() {
                           <Building2 className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Education Institutions
-                          </div>
+                          <div className="font-medium text-sm text-white">Education Institutions</div>
                           <div className="text-xs text-muted-foreground">Transform learning ecosystems</div>
                         </div>
                       </div>
@@ -306,9 +259,7 @@ export function Header() {
                           <BookOpen className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Resource Center
-                          </div>
+                          <div className="font-medium text-sm text-white">Resource Center</div>
                           <div className="text-xs text-muted-foreground">Today's best practices</div>
                         </div>
                       </div>
@@ -317,9 +268,7 @@ export function Header() {
                           <Store className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Marketplace
-                          </div>
+                          <div className="font-medium text-sm text-white">Marketplace</div>
                           <div className="text-xs text-muted-foreground">Extend and automate workflows</div>
                         </div>
                       </div>
@@ -328,9 +277,7 @@ export function Header() {
                           <FileText className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Templates
-                          </div>
+                          <div className="font-medium text-sm text-white">Templates</div>
                           <div className="text-xs text-muted-foreground">Jumpstart app development</div>
                         </div>
                       </div>
@@ -339,9 +286,7 @@ export function Header() {
                           <HelpCircle className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Guides
-                          </div>
+                          <div className="font-medium text-sm text-white">Guides</div>
                           <div className="text-xs text-muted-foreground">Find help quickly</div>
                         </div>
                       </div>
@@ -350,9 +295,7 @@ export function Header() {
                           <PenTool className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Partner Finder
-                          </div>
+                          <div className="font-medium text-sm text-white">Partner Finder</div>
                           <div className="text-xs text-muted-foreground">Get help from solution partners</div>
                         </div>
                       </div>
@@ -367,9 +310,7 @@ export function Header() {
                           <Users className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Customers
-                          </div>
+                          <div className="font-medium text-sm text-white">Customers</div>
                           <div className="text-xs text-muted-foreground">Trusted by the best teams</div>
                         </div>
                       </div>
@@ -378,7 +319,7 @@ export function Header() {
                           <PenTool className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>Blog</div>
+                          <div className="font-medium text-sm text-white">Blog</div>
                           <div className="text-xs text-muted-foreground">The latest posts and changes</div>
                         </div>
                       </div>
@@ -387,9 +328,7 @@ export function Header() {
                           <GitBranch className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Changelog
-                          </div>
+                          <div className="font-medium text-sm text-white">Changelog</div>
                           <div className="text-xs text-muted-foreground">See what shipped</div>
                         </div>
                       </div>
@@ -398,7 +337,7 @@ export function Header() {
                           <Newspaper className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>Press</div>
+                          <div className="font-medium text-sm text-white">Press</div>
                           <div className="text-xs text-muted-foreground">Read the latest news</div>
                         </div>
                       </div>
@@ -407,9 +346,7 @@ export function Header() {
                           <Calendar className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className={`font-medium text-sm ${isDarkMode ? "text-white" : "text-black"}`}>
-                            Events
-                          </div>
+                          <div className="font-medium text-sm text-white">Events</div>
                           <div className="text-xs text-muted-foreground">Join us at an event</div>
                         </div>
                       </div>
@@ -419,24 +356,15 @@ export function Header() {
               </div>
             </div>
 
-            <a
-              href="#"
-              className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"} hover:text-muted-foreground transition-colors`}
-            >
+            <a href="#" className="text-sm font-medium text-white hover:text-muted-foreground transition-colors">
               Enterprise
             </a>
-            <a
-              href="#"
-              className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"} hover:text-muted-foreground transition-colors`}
-            >
+            <a href="#" className="text-sm font-medium text-white hover:text-muted-foreground transition-colors">
               Docs
             </a>
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm" onClick={toggleTheme} className="p-2">
-              {isDarkMode ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-            </Button>
             <Button variant="ghost" size="sm">
               Contact
             </Button>
@@ -452,26 +380,22 @@ export function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden border-t border-border py-4">
             <div className="flex flex-col space-y-4">
-              <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
+              <a href="#" className="text-sm font-medium text-white">
                 Products
               </a>
-              <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
+              <a href="#" className="text-sm font-medium text-white">
                 Solutions
               </a>
-              <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
+              <a href="#" className="text-sm font-medium text-white">
                 Resources
               </a>
-              <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
+              <a href="#" className="text-sm font-medium text-white">
                 Enterprise
               </a>
-              <a href="#" className={`text-sm font-medium ${isDarkMode ? "text-white" : "text-black"}`}>
+              <a href="#" className="text-sm font-medium text-white">
                 Docs
               </a>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="justify-start" onClick={toggleTheme}>
-                  {isDarkMode ? <Sun className="h-4 w-4 mr-2" /> : <Moon className="h-4 w-4 mr-2" />}
-                  {isDarkMode ? "Light Mode" : "Dark Mode"}
-                </Button>
                 <Button variant="ghost" size="sm" className="justify-start">
                   Contact
                 </Button>
