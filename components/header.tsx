@@ -243,7 +243,27 @@ export function Header() {
                     : "opacity-0 -translate-y-2 pointer-events-none"
                 }`}
               >
-                <div className="space-y-4"></div>
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="text-sm font-semibold text-muted-foreground mb-4">Past Papers With Q&A</h3>
+                    <div className="space-y-2">
+                      <a href="#" className="block text-sm text-white hover:text-muted-foreground transition-colors">
+                        Previous Exam Papers & Solution Guides
+                      </a>
+                    </div>
+                  </div>
+                  <div>
+                    <h3 className="text-sm font-semibold text-muted-foreground mb-4">Courses</h3>
+                    <div className="space-y-2">
+                      <a href="#" className="block text-sm text-white hover:text-muted-foreground transition-colors">
+                        Online Courses
+                      </a>
+                      <a href="#" className="block text-sm text-white hover:text-muted-foreground transition-colors">
+                        Learning Paths
+                      </a>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
