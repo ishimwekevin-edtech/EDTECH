@@ -247,7 +247,10 @@ export function Header() {
                   <div>
                     <h3 className="text-sm font-semibold text-muted-foreground mb-4">Past Papers With Q&A</h3>
                     <div className="space-y-2">
-                      <a href="#" className="block text-sm text-white hover:text-muted-foreground transition-colors">
+                      <a
+                        href="/exam-papers"
+                        className="block text-sm text-white hover:text-muted-foreground transition-colors"
+                      >
                         Previous Exam Papers & Solution Guides
                       </a>
                     </div>
