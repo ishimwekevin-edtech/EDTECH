@@ -139,7 +139,7 @@ export function Header() {
                           <Lightbulb className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className="font-medium text-sm text-white">Personalized Learning</div>
+                          <div className="font-medium text-sm text-white">Students Simulator</div>
                           <div className="text-xs text-muted-foreground">Adaptive AI-driven education</div>
                         </div>
                       </div>
@@ -148,7 +148,7 @@ export function Header() {
                           <BookOpen className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className="font-medium text-sm text-white">Intelligent Tutoring</div>
+                          <div className="font-medium text-sm text-white">Personalised Learning</div>
                           <div className="text-xs text-muted-foreground">AI-powered academic support</div>
                         </div>
                       </div>
@@ -157,7 +157,7 @@ export function Header() {
                           <TrendingUp className="h-4 w-4" />
                         </div>
                         <div>
-                          <div className="font-medium text-sm text-white">Student Assessment</div>
+                          <div className="font-medium text-sm text-white">Grades Simulator</div>
                           <div className="text-xs text-muted-foreground">Automated grading and feedback</div>
                         </div>
                       </div>
@@ -168,6 +168,15 @@ export function Header() {
                         <div>
                           <div className="font-medium text-sm text-white">Content Generation</div>
                           <div className="text-xs text-muted-foreground">AI-created learning materials</div>
+                        </div>
+                      </div>
+                      <div className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors">
+                        <div className="flex h-8 w-8 items-center justify-center">
+                          <Building2 className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <div className="font-medium text-sm text-white">Virtual Schools</div>
+                          <div className="text-xs text-muted-foreground">Complete digital learning environments</div>
                         </div>
                       </div>
                     </div>
