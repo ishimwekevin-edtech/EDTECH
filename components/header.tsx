@@ -19,6 +19,7 @@ import {
   Users2,
   Building2,
   UserCheck,
+  Zap,
 } from "lucide-react"
 
 export function Header() {
@@ -104,6 +105,20 @@ export function Header() {
                         <div>
                           <div className="font-medium text-sm text-white">BMAAS</div>
                           <div className="text-xs text-muted-foreground">Branding & Marketing as a Service</div>
+                        </div>
+                      </a>
+                      <a
+                        href="https://vibelearning.vercel.app/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
+                      >
+                        <div className="flex h-8 w-8 items-center justify-center bg-purple-600 text-white rounded text-xs font-bold">
+                          <Zap className="h-4 w-4" />
+                        </div>
+                        <div>
+                          <div className="font-medium text-sm text-white">Vibe Learning</div>
+                          <div className="text-xs text-muted-foreground">Dynamic interactive learning platform</div>
                         </div>
                       </a>
                     </div>
