@@ -38,7 +38,7 @@ export function FooterSection() {
         <AnimatedContainer className="space-y-4">
           <h2 className="text-2xl font-bold">EDTECH</h2>
           <p className="text-muted-foreground mt-8 text-sm md:mt-0">
-            © {new Date().getFullYear()} EDTECH. All rights reserved.
+            © {new Date().getFullYear()} Edtech Technologies Inc. All rights reserved.
           </p>
         </AnimatedContainer>
       </div>
