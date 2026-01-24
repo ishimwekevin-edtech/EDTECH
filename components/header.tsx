@@ -71,9 +71,7 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
-                        <div className="flex h-8 w-8 items-center justify-center bg-blue-600 text-white rounded text-xs font-bold">
-                          <Brain className="h-4 w-4" />
-                        </div>
+                        <Brain className="h-5 w-5 text-blue-500" />
                         <div>
                           <div className="font-medium text-sm text-white">Personal Intelligent</div>
                           <div className="text-xs text-muted-foreground">Educational AI Platform</div>
@@ -85,9 +83,7 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
-                        <div className="flex h-8 w-8 items-center justify-center bg-green-600 text-white rounded text-xs font-bold">
-                          <MapPin className="h-4 w-4" />
-                        </div>
+                        <MapPin className="h-5 w-5 text-green-500" />
                         <div>
                           <div className="font-medium text-sm text-white">SchoolFinder</div>
                           <div className="text-xs text-muted-foreground">Find and discover schools</div>
@@ -99,9 +95,7 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
-                        <div className="flex h-8 w-8 items-center justify-center bg-orange-600 text-white rounded text-xs font-bold">
-                          <Briefcase className="h-4 w-4" />
-                        </div>
+                        <Briefcase className="h-5 w-5 text-orange-500" />
                         <div>
                           <div className="font-medium text-sm text-white">BMAAS</div>
                           <div className="text-xs text-muted-foreground">Branding & Marketing as a Service</div>
@@ -113,9 +107,7 @@ export function Header() {
                         rel="noopener noreferrer"
                         className="flex items-start space-x-3 p-2 rounded-lg hover:bg-muted/50 transition-colors"
                       >
-                        <div className="flex h-8 w-8 items-center justify-center bg-purple-600 text-white rounded text-xs font-bold">
-                          <Zap className="h-4 w-4" />
-                        </div>
+                        <Zap className="h-5 w-5 text-purple-500" />
                         <div>
                           <div className="font-medium text-sm text-white">Vibe Learning</div>
                           <div className="text-xs text-muted-foreground">Dynamic interactive learning platform</div>
