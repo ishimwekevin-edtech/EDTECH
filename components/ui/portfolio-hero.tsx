@@ -87,7 +87,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   );
 };
 
-export function PortfolioHero() {
+export default function Component() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
