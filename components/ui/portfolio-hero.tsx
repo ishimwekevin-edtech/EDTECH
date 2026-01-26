@@ -1,6 +1,3 @@
-Copy-paste this component to /components/ui folder:
-```tsx
-portfolio-hero.tsx
 import React, { useState, useEffect, useRef, useMemo } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 
@@ -87,7 +84,7 @@ const BlurText: React.FC<BlurTextProps> = ({
   );
 };
 
-export default function Component() {
+export default function PortfolioHero() {
   const [isDark, setIsDark] = useState(true);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
@@ -281,27 +278,3 @@ export default function Component() {
     </div>
   );
 }
-
-demo.tsx
-import React from "react";
-import Component from "@/components/ui/portfolio-hero";
-
-export default function Demo() {
-  return (
-    <>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@700&family=Antic&display=swap"
-      />
-      <div className="w-full">
-        <Component />
-      </div>
-    </>
-  );
-}
-```
-
-Install NPM dependencies:
-```bash
-lucide-react
-```
