@@ -327,8 +327,8 @@ export function Header() {
           </nav>
 
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" size="sm">
-              Contact
+            <Button variant="ghost" size="sm" asChild>
+              <a href="/contact">Contact</a>
             </Button>
           </div>
 
@@ -358,8 +358,8 @@ export function Header() {
                 Docs
               </a>
               <div className="flex flex-col space-y-2 pt-4 border-t border-border">
-                <Button variant="ghost" size="sm" className="justify-start">
-                  Contact
+                <Button variant="ghost" size="sm" className="justify-start" asChild>
+                  <a href="/contact">Contact</a>
                 </Button>
               </div>
             </div>

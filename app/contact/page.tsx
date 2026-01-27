@@ -1,0 +1,10 @@
+import PortfolioHero from "@/components/ui/portfolio-hero"
+
+export const metadata = {
+  title: "Contact - EDTECH",
+  description: "Get in touch with EDTECH team",
+}
+
+export default function ContactPage() {
+  return <PortfolioHero />
+}
